@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEM | Tarjeta Estudiantil Morada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/public/css/styles.css" />
+  </head>
+  <body>
+    <!-- Hero -->
+    <div class="relative overflow-hidden pt-8">
+      <img
+        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2830&amp;q=80&amp;blend=111827&amp;sat=-100&amp;exp=15&amp;blend-mode=multiply"
+        alt=""
+        class="object-cover w-full h-full z-[-10] inset-0 absolute"
+      />
+      <!-- Navbar -->
+      <div class="relative">
+        <!-- bg-gray-50 dark:bg-gray-900 -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div
+            class="flex justify-between items-center py-6 md:justify-start md:space-x-10"
+          >
+            <!-- class="flex justify-between items-center border-b-2 border-gray-100 dark:border-gray-700 py-6 md:justify-start md:space-x-10"> -->
+            <div class="flex justify-start lg:w-0 lg:flex-1">
+              <a href="#">
+                <span class="sr-only">Logo</span>
+                <img class="h-8 w-auto sm:h-10" src="/img/logo.png" alt="" />
+              </a>
+            </div>
+            <nav class="hidden md:flex space-x-10">
+              <a
+                href="#"
+                class="text-base font-medium text-gray-300 hover:text-yellow-500 dark:hover:text-yellow-500 border-transparent border-b-2 hover:border-yellow-500 dark:hover:border-yellow-500 transform hover:-translate-y-1 transition-all duration-150"
+              >
+                Beneficios
+              </a>
+
+              <a
+                href="#comercios-adheridos"
+                class="text-base font-medium text-gray-300 hover:text-yellow-500 dark:hover:text-yellow-500 border-transparent border-b-2 hover:border-yellow-500 dark:hover:border-yellow-500 transform hover:-translate-y-1 transition-all duration-150"
+              >
+                Comercios Adheridos
+              </a>
+              <a
+                href="#"
+                class="text-base font-medium text-gray-300 hover:text-yellow-500 dark:hover:text-yellow-500 border-transparent border-b-2 hover:border-yellow-500 dark:hover:border-yellow-500 transform hover:-translate-y-1 transition-all duration-150"
+              >
+                Información de la Tarjeta
+              </a>
+            </nav>
+
+            <div class="flex items-center justify-end md:flex-1 lg:w-0">
+              <button
+                id="toggle-dark-mode"
+                class="whitespace-nowrap text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-200 dark:hover:text-gray-200"
+              >
+                <svg
+                  id="sun-icon"
+                  class="hidden h-8 w-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  ></path>
+                </svg>
+                <svg
+                  id="moon-icon"
+                  class="h-8 w-8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+                  ></path>
+                </svg>
+              </button>
+
+              <button
+                id="menu-button"
+                type="button"
+                class="md:hidden ml-8 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              >
+                <span class="sr-only">Open menu</span>
+                <!-- Heroicon name: outline/menu -->
+                <svg
+                  class="h-8 w-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu open state. -->
+            <div
+              id="mobile-menu"
+              class="hidden"
+              role="dialog"
+              aria-modal="true"
+            >
+              <!-- Background backdrop, show/hide based on slide-over state. -->
+              <div class="fixed inset-0 z-50"></div>
+              <div
+                class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-800 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+              >
+                <div class="flex items-center justify-between">
+                  <a href="#" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Your Company</span>
+                    <img
+                      class="h-8 w-auto"
+                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                      alt=""
+                    />
+                  </a>
+                  <button
+                    id="close-button"
+                    type="button"
+                    class="-m-2.5 rounded-md p-2.5 text-gray-700"
+                  >
+                    <span class="sr-only">Close menu</span>
+                    <svg
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="mt-6 flow-root">
+                  <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="space-y-2 py-6">
+                      <a
+                        href="#"
+                        class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-500 dark:text-gray-300 hover:text-yellow-500 dark:hover:bg-yellow-500 border-transparent"
+                        >Beneficios</a
+                      >
+                      <a
+                        href="#comercios-adheridos"
+                        class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-500 dark:text-gray-300 hover:text-yellow-500 dark:hover:bg-yellow-500 border-transparent"
+                        >Comercios Adheridos</a
+                      >
+                      <a
+                        href="#"
+                        class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-500 dark:text-gray-300 hover:text-yellow-500 dark:hover:bg-yellow-500 border-transparent"
+                        >Información de la Tarjeta</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Navbar -->
+
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div
+          class="text-center lg:text-left py-10 md:py-20 px-4 sm:px-6 lg:py-40 lg:px-8"
+        >
+          <h2
+            class="text-6xl tracking-tight font-extrabold text-gray-100 sm:text-5xl md:text-6xl text-center"
+          >
+            <span class="text-yellow-500">TEM:</span>
+            <span class="">TARJETA ESTUDIANTIL MORADA</span>
+          </h2>
+          <p
+            class="mt-3 max-w-md mx-auto text-center text-gray-400 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
+          >
+            Beneficios y descuentos en los comercios más reconocidos de nuestra
+            ciudad. Únete ahora y empieza a ahorrar.
+          </p>
+          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center">
+            <div class="rounded-md shadow">
+              <a
+                href="https://tailwindui.com/components/application-ui/navigation/command-palettes#component-5e859372042e1b3b308dc51f3ac8bad6"
+                class="w-full flex items-center justify-center px-8 py-3 border border-yellow-500 text-base font-medium rounded-md text-yellow-500 bg-transparent hover:bg-yellow-100 md:py-4 md:text-lg md:px-10 transition duration-300"
+                target="_blank"
+              >
+                Soy un Comercio
+              </a>
+            </div>
+            <div class="mt-3 sm:mt-0 sm:ml-3">
+              <a
+                href="#"
+                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-600 md:py-4 md:text-lg md:px-10"
+              >
+                Obtén tu Tarjeta
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Hero -->
+
+    <!-- < Comercios Adheridos > -->
+    <div class="bg-gray-50 dark:bg-gray-800" id="comercios-adheridos">
+      <div>
+        <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div
+            class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24"
+          >
+            <h1
+              class="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100"
+            >
+              Comercios Adheridos
+            </h1>
+
+            <div class="flex items-center dark:bg-gray-800">
+              <div class="relative inline-block text-left">
+                <div>
+                  <button
+                    type="button"
+                    class="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white"
+                    id="sort-button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    Ordenar por
+                    <svg
+                      class="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <div
+                  class="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-900 dark:text-gray-300"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                  tabindex="-1"
+                >
+                  <div class="py-1" role="none">
+                    <button
+                      class="font-medium text-gray-900 block px-4 py-2 text-sm dark:text-gray-200"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-0"
+                      aria-disabled="true"
+                    >
+                      Últimos cargados
+                    </button>
+                    <button
+                      class="text-gray-500 block px-4 py-2 text-sm dark:text-gray-400"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-1"
+                    >
+                      Descuentos: Menor a Mayor
+                    </button>
+                    <button
+                      class="text-gray-500 block px-4 py-2 text-sm dark:text-gray-400"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-2"
+                    >
+                      Descuentos: Mayor a Menor
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section aria-labelledby="products-heading" class="pb-24 pt-6">
+            <h2 id="products-heading" class="sr-only">Comercios</h2>
+
+            <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+              <!-- Product grid -->
+              <div class="lg:col-span-3">
+                <!-- Grid -->
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-4 gap-6"
+                >
+                  <div
+                    class="hover:shadow-md group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]"
+                  >
+                    <div
+                      class="h-40 relative flex flex-col justify-center items-center bg-blue-600 rounded-t-xl"
+                    >
+                      <img
+                        src="/img/comercios/1.jpg"
+                        alt=""
+                        class="w-full h-full rounded-t-xl"
+                      />
+                      <span
+                        class="absolute top-0 right-0 rounded-tr-xl rounded-bl-xl text-sm font-bold bg-red-800 text-white py-2 px-4 dark:bg-red-900"
+                      >
+                        10% y 20%</span
+                      >
+                    </div>
+
+                    <div class="p-4 md:p-6">
+                      <h3
+                        class="text-xl font-semibold text-gray-800 dark:text-gray-300 dark:hover:text-white"
+                      >
+                        Chango Más
+                      </h3>
+                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      </p>
+                    </div>
+
+                    <div
+                      class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-gray-700 dark:divide-gray-700"
+                    >
+                      <a
+                        href="javascript:;"
+                        onclick="toggleModal()"
+                        class="w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-bl-xl rounded-br-xl font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm sm:p-4 dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                        href="javascript:;"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                          />
+                        </svg>
+                        Detalles
+                      </a>
+                    </div>
+                  </div>
+
+                  <div
+                    id="show-shop"
+                    class="hidden fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50"
+                  >
+                    <div class="fixed inset-0 transform transition-all">
+                      <div
+                        class="absolute inset-0 bg-gray-500 dark:bg-gray-900 opacity-75"
+                      ></div>
+                    </div>
+
+                    <div
+                      class="mb-6 bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:max-w-2xl sm:mx-auto"
+                    >
+                      <div
+                        x-model="activeItem"
+                        class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]"
+                      >
+                        <div class="overflow-y-auto">
+                          <div>
+                            <span
+                              class="pt-3 px-4 block text-lg font-bold text-gray-800 dark:text-white"
+                              x-text="activeItem?.name"
+                              >fulanito</span
+                            >
+                            <div
+                              class="py-3 px-4 text-sm text-gray-600 dark:text-gray-400"
+                            >
+                              <div
+                                id="map"
+                                class="h-48 w-full bg-gray-100 rounded-md mb-6"
+                                style="position: relative; overflow: hidden"
+                              ></div>
+                              <div
+                                class="bg-blue-50 border text-sm text-blue-600 rounded-md p-4 pl-2 border-l-8 border-blue-400"
+                                role="alert"
+                              >
+                                <svg
+                                  width="426"
+                                  height="443"
+                                  viewBox="0 0 426 443"
+                                  class="h-6 w-6 fill-blue-600 inline"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M267.434 124.959C262.628 122.238 256.526 123.929 253.806 128.735L154.88 303.504C152.159 308.31 153.85 314.412 158.656 317.132C160.213 318.013 161.904 318.432 163.573 318.432C167.059 318.432 170.445 316.606 172.285 313.356L271.211 138.587C273.932 133.781 272.241 127.679 267.434 124.959Z"
+                                  ></path>
+                                  <path
+                                    d="M187.628 206.39C193.632 195.977 195.222 183.849 192.105 172.241C188.988 160.633 181.537 150.932 171.124 144.928C160.712 138.923 148.586 137.334 136.975 140.45C125.366 143.567 115.666 151.018 109.662 161.431C103.658 171.844 102.068 183.972 105.185 195.581C108.302 207.189 115.754 216.889 126.167 222.894C133.096 226.889 140.783 228.93 148.572 228.929C152.489 228.929 156.432 228.413 160.316 227.37C171.924 224.254 181.624 216.803 187.628 206.39ZM136.156 205.568C130.371 202.232 126.231 196.843 124.499 190.394C122.767 183.945 123.65 177.206 126.986 171.422C130.321 165.637 135.711 161.497 142.16 159.766C144.318 159.186 146.508 158.899 148.684 158.899C153.011 158.899 157.282 160.034 161.131 162.253C166.916 165.589 171.056 170.978 172.788 177.428C174.52 183.877 173.637 190.615 170.301 196.399C166.966 202.184 161.577 206.324 155.127 208.055C148.678 209.788 141.941 208.903 136.156 205.568Z"
+                                  ></path>
+                                  <path
+                                    d="M299.925 219.196C289.512 213.192 277.385 211.602 265.776 214.719C254.167 217.836 244.467 225.287 238.463 235.7C232.459 246.113 230.869 258.241 233.986 269.85C237.103 281.458 244.555 291.158 254.967 297.163C261.896 301.158 269.583 303.199 277.372 303.198C281.289 303.198 285.231 302.682 289.116 301.639C300.725 298.522 310.425 291.071 316.429 280.658C322.433 270.245 324.023 258.117 320.906 246.509C317.789 234.901 310.338 225.201 299.925 219.196ZM299.104 270.668C295.769 276.453 290.379 280.593 283.93 282.324C277.482 284.057 270.743 283.173 264.959 279.838C259.174 276.502 255.034 271.113 253.302 264.664C251.57 258.215 252.453 251.476 255.789 245.692C259.124 239.907 264.513 235.767 270.963 234.036C273.121 233.456 275.311 233.169 277.487 233.169C281.814 233.169 286.085 234.304 289.934 236.523C295.719 239.859 299.859 245.248 301.591 251.698C303.323 258.146 302.44 264.884 299.104 270.668Z"
+                                  ></path>
+                                  <path
+                                    d="M416.988 221.046C416.988 214.157 418.928 206.295 420.981 197.971C424.428 183.998 428.335 168.161 423.325 152.728C418.115 136.682 405.366 126.021 394.117 116.615C387.782 111.317 381.798 106.314 378.049 101.163C374.214 95.892 371.251 88.573 368.115 80.824C362.648 67.318 356.452 52.01 342.994 42.215C329.656 32.508 313.244 31.32 298.763 30.274C290.356 29.666 282.416 29.091 276.084 27.036C270.209 25.129 263.713 21.049 256.835 16.729C244.349 8.887 230.198 0 213.045 0C195.892 0 181.741 8.887 169.256 16.728C162.379 21.047 155.882 25.127 150.008 27.035C143.675 29.091 135.735 29.665 127.328 30.273C112.848 31.32 96.435 32.507 83.097 42.214C69.639 52.009 63.443 67.318 57.976 80.823C54.839 88.572 51.877 95.891 48.042 101.162C44.292 106.313 38.309 111.317 31.974 116.614C20.725 126.02 7.97601 136.681 2.76701 152.725C-2.24499 168.159 1.66301 183.996 5.11001 197.969C7.16401 206.294 9.10301 214.157 9.10301 221.045C9.10301 227.933 7.16401 235.796 5.11001 244.119C1.66301 258.093 -2.24399 273.93 2.76701 289.364C7.97601 305.408 20.726 316.069 31.975 325.475C38.31 330.772 44.294 335.776 48.043 340.927C51.878 346.198 54.84 353.517 57.977 361.266C63.444 374.773 69.64 390.081 83.098 399.875C96.436 409.582 112.848 410.77 127.329 411.816C135.736 412.424 143.676 412.999 150.008 415.054C155.883 416.962 162.379 421.041 169.257 425.361C181.742 433.202 195.893 442.089 213.046 442.089C230.199 442.089 244.349 433.202 256.834 425.362C263.712 421.043 270.208 416.963 276.084 415.055C282.417 412.998 290.357 412.424 298.765 411.816C313.245 410.769 329.657 409.582 342.995 399.875C356.453 390.08 362.649 374.771 368.116 361.266C371.252 353.517 374.215 346.198 378.051 340.927C381.8 335.776 387.784 330.772 394.119 325.475C405.367 316.069 418.117 305.408 423.326 289.364C428.338 273.93 424.43 258.093 420.983 244.119C418.928 235.797 416.988 227.935 416.988 221.046ZM391.855 251.307C394.583 262.364 397.159 272.807 394.791 280.1C392.247 287.934 383.808 294.992 374.873 302.462C367.422 308.692 359.718 315.135 353.793 323.276C347.788 331.526 343.985 340.923 340.306 350.011C335.964 360.74 331.862 370.874 325.34 375.62C318.937 380.28 308.086 381.065 296.599 381.895C286.775 382.606 276.616 383.341 266.818 386.523C257.404 389.579 249.003 394.855 240.879 399.957C230.943 406.196 221.559 412.09 213.046 412.09C204.533 412.09 195.148 406.196 185.212 399.957C177.088 394.854 168.687 389.579 159.273 386.522C149.475 383.34 139.317 382.606 129.493 381.895C118.005 381.065 107.155 380.28 100.751 375.62C94.23 370.874 90.128 360.74 85.786 350.011C82.107 340.923 78.304 331.526 72.299 323.276C66.375 315.134 58.67 308.692 51.219 302.462C42.284 294.99 33.844 287.934 31.301 280.101C28.933 272.807 31.509 262.364 34.237 251.307C36.63 241.609 39.104 231.58 39.104 221.046C39.104 210.512 36.63 200.483 34.237 190.784C31.509 179.727 28.933 169.284 31.301 161.991C33.844 154.157 42.284 147.099 51.219 139.629C58.67 133.399 66.374 126.956 72.299 118.815C78.304 110.565 82.107 101.168 85.786 92.08C90.128 81.351 94.23 71.217 100.752 66.471C107.155 61.811 118.006 61.026 129.494 60.196C139.318 59.485 149.476 58.751 159.275 55.569C168.688 52.512 177.089 47.237 185.213 42.134C195.147 35.894 204.531 30 213.045 30C221.559 30 230.944 35.894 240.879 42.133C249.004 47.236 257.404 52.511 266.818 55.568C276.616 58.75 286.774 59.484 296.598 60.195C308.086 61.025 318.936 61.81 325.34 66.47C331.861 71.216 335.964 81.351 340.306 92.079C343.985 101.167 347.788 110.564 353.792 118.814C359.717 126.955 367.421 133.397 374.872 139.627C383.807 147.099 392.247 154.156 394.791 161.99C397.159 169.283 394.582 179.727 391.854 190.784C389.461 200.482 386.987 210.511 386.987 221.045C386.987 231.579 389.462 241.608 391.855 251.307Z"
+                                  ></path>
+                                </svg>
+                                <p
+                                  class="inline pl-2"
+                                  x-text="activeItem?.span2"
+                                >
+                                  12% (asdasd) y 10% (productos seleccionados)
+                                </p>
+                              </div>
+
+                              <div class="mt-6">
+                                <div
+                                  class="border border-gray-200 p-4 rounded-lg space-y-4 dark:border-gray-700"
+                                >
+                                  <div class="hidden sm:grid sm:grid-cols-5">
+                                    <div
+                                      class="sm:col-span-2 text-xs font-medium text-gray-500 uppercase"
+                                    >
+                                      Contacto
+                                    </div>
+                                  </div>
+
+                                  <div
+                                    class="hidden sm:block border-b border-gray-200 dark:border-gray-700"
+                                  ></div>
+
+                                  <div class="grid grid-cols-2 gap-2">
+                                    <div class="col-span-full">
+                                      <h5
+                                        class="text-xs font-medium text-gray-500 uppercase"
+                                      >
+                                        Dirección
+                                      </h5>
+                                      <p
+                                        class="font-medium text-gray-800 dark:text-gray-200"
+                                        x-text="activeItem?.address"
+                                      >
+                                        15 y 00
+                                      </p>
+                                    </div>
+
+                                    <div class="col-span-full">
+                                      <h5
+                                        class="text-xs font-medium text-gray-500 uppercase"
+                                      >
+                                        Teléfono
+                                      </h5>
+                                      <p
+                                        class="text-gray-800 dark:text-gray-200"
+                                        x-text="activeItem?.phone"
+                                      >
+                                        3644589288
+                                      </p>
+                                    </div>
+
+                                    <div>
+                                      <h5
+                                        class="text-xs font-medium text-gray-500 uppercase"
+                                      >
+                                        Email
+                                      </h5>
+                                      <p
+                                        class="text-gray-800 dark:text-gray-200"
+                                        x-text="activeItem?.email"
+                                      >
+                                        ejemplo@gmail.com
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="mt-6 flex justify-around">
+                                <a href="javascript:void(0)">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="1em"
+                                    class="h-12 w-12 rounded-lg ring-1 ring-black ring-opacity-10 ring-offset-0 ring-offset-white p-2 text-gray-800 dark:text-white dark:ring-gray-600 dark:fill-white fill-gray-800"
+                                    viewBox="0 0 320 512"
+                                  >
+                                    <path
+                                      d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                                    ></path>
+                                  </svg>
+                                </a>
+
+                                <a href="javascript:void(0)">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="h-12 w-12 rounded-lg ring-1 ring-black ring-opacity-10 ring-offset-0 ring-offset-white p-2 text-gray-800 dark:text-white dark:ring-gray-600"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+                                    ></path>
+                                  </svg>
+                                </a>
+
+                                <a href="https://www.instagram.com">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="1em"
+                                    viewBox="0 0 448 512"
+                                    class="h-12 w-12 rounded-lg ring-1 ring-black ring-opacity-10 ring-offset-0 ring-offset-white p-2 text-gray-800 dark:text-white dark:ring-gray-600 dark:fill-white fill-gray-800"
+                                  >
+                                    <path
+                                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                                    ></path>
+                                  </svg>
+                                </a>
+
+                                <a href="javascript:void(0)">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="1em"
+                                    viewBox="0 0 512 512"
+                                    class="h-12 w-12 rounded-lg ring-1 ring-black ring-opacity-10 ring-offset-0 ring-offset-white p-2 text-gray-800 dark:text-white dark:ring-gray-600 dark:fill-white fill-gray-800"
+                                  >
+                                    <path
+                                      d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                                    ></path>
+                                  </svg>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-gray-700"
+                        >
+                          <button
+                            type="button"
+                            onclick="toggleModal()"
+                            class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-500 rounded-md font-semibold text-xs text-gray-700 dark:text-gray-300 uppercase tracking-widest shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150"
+                          >
+                            Cerrar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Grid -->
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div
+              class="mt-8 flex items-center justify-center"
+              x-model="pagination"
+            >
+              <nav
+                role="navigation"
+                aria-label="Pagination Navigation"
+                class="flex items-center gap-x-1"
+              >
+                <ul class="flex items-center gap-4">
+                  <li>
+                    <button
+                      type="button"
+                      @click="getItems(item.url)"
+                      :disabled="(pagination.onFirstPage && item.url == null) || (!pagination.hasMorePages && item.url == null)"
+                      :class="item.active ?
+                            'min-h-[38px] min-w-[38px] flex justify-center items-center bg-gray-200 text-gray-800 py-2 px-3 text-sm rounded-lg focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-600 dark:text-white dark:focus:bg-gray-500' :
+                            'min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10'"
+                      x-html="item.label"
+                    ></button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- End Pagination -->
+          </section>
+        </main>
+      </div>
+    </div>
+    <!-- < Comercios Adheridos /> -->
+
+    <!-- < Todos los comercios > -->
+    <div class="bg-gray-50 dark:bg-gray-800" id="comercios-adheridos">
+      <div>
+        <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div
+            class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24"
+          >
+            <h1
+              class="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100"
+            >
+              Hecha un vistaso a nuestros comecios adheridos
+            </h1>
+          </div>
+
+          <section aria-labelledby="products-heading" class="pb-24 pt-6">
+            <div
+              id="shops-map"
+              class="bg-slate-200"
+              style="height: 400px"
+            ></div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <!-- < Todos los comercios /> -->
+
+    <script type="module" src="/public/js/main.js"></script>
+
+    <script>
+      // ================ Modal ================
+      // Este script permite mostrar y ocultar el modal
+      function toggleModal() {
+        const modal = document.getElementById("show-shop");
+        modal.classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>
